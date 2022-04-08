@@ -1,22 +1,25 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-export const EventThumbnail = ({ title, image, venue, date }) => {
+export const EventThumbnail = ({ ticket }) => {
+  const navigate = useNavigate();
   return (
-    <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-        <img class="rounded-t-lg" src={image} alt="" />
+    <div
+      className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer"
+      onClick={() => navigate(`${ticket?.id}/buy`)}
+    >
+      <img className="rounded-t-lg" src={ticket?.image} alt="" />
 
-        <div class="p-5">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {title}
-          </h5>
+      <div className="p-5">
+        <h5 className="capitalize mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+          {ticket?.title}
+        </h5>
 
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            venue: {venue}
-          </p>
-          <p>date: {date}</p>
-        </div>
-      </a>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          venue: {ticket?.venue}
+        </p>
+        <p>date: {ticket?.date.toDateString()}</p>
+      </div>
     </div>
   );
 };

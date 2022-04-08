@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,36 +6,30 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 
-// local component import
-import { Checkout, Home } from "./pages";
-const shows = [
-  {
-    title: "qwer",
-    details: "asd",
-    image: "",
-    venue: "cxv",
-    date: "qwer",
-  },
-  {
-    title: "qwer",
-    details: "qwer",
-    venue: "qwer",
-    date: "qwer",
-  },
-];
+import { charts, ChartContext } from "./context/user-context";
 
-const checkoutData = {
-  price: "2000",
-};
+// local component import
+import { Checkout, Home, BuyTicket } from "./pages";
 
 const App = () => {
+  const [chart, setChart] = useState([
+    {
+      id: "",
+      userFullName: "",
+      ticketId: "",
+      Quantity: "",
+    },
+  ]);
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="checkout" element={<Checkout />} />
-      </Routes>
-    </BrowserRouter>
+    <ChartContext.Provider value={{ chart, setChart }}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path=":ticketId/buy" element={<BuyTicket />} />
+        </Routes>
+      </BrowserRouter>
+    </ChartContext.Provider>
   );
 };
 

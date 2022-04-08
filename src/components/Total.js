@@ -1,18 +1,45 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Button, TextSection } from ".";
 
-export const Total = ({ total }) => {
+// local component import
+import { currencyFormatter, costCalculator } from "../util/helper";
+import { ChartContext } from "../context/user-context";
+
+export const Total = () => {
+  const { chart } = useContext(ChartContext);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    setTotalPrice(0);
+
+    return () => {
+      setTotalPrice(0);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col ring-1 ring-slate-200 rounded-sm p-4">
       <TextSection>
         <h5 className="capitalize font-bold">total</h5>
-        <h5 className="font-bold">$523.19</h5>
+        <h5 className="font-bold">
+          {currencyFormatter(
+            costCalculator(chart?.show?.price, chart?.ticketQuantity)
+          )}
+        </h5>
       </TextSection>
       <TextSection header="tickets">
         <h5 className="capitalize text-sm">
-          resale tickets: <span>$22.9 * 2</span>
+          resale tickets:{" "}
+          <span>
+            {currencyFormatter(chart?.show?.price)} *{" "}
+            {chart?.show?.ticketQuantity}
+          </span>
         </h5>
-        <h5>$234.19</h5>
+        <h5>
+          {currencyFormatter(
+            costCalculator(chart?.show?.price, chart?.ticketQuantity)
+          )}
+        </h5>
       </TextSection>
       <TextSection header="notes from seller">
         <p className="text-slate-400 text-sm">
@@ -22,7 +49,10 @@ export const Total = ({ total }) => {
       </TextSection>
       <TextSection header="fees">
         <h5 className="capitalize text-sm">
-          resale tickets: <span>$22.9 * 2</span>
+          resale tickets:{" "}
+          <span>
+            {currencyFormatter(chart?.show?.price)} * {chart?.ticketQuantity}
+          </span>
         </h5>
         <h5>$234.19</h5>
       </TextSection>
