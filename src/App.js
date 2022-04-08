@@ -1,5 +1,13 @@
-import "./App.css";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  BrowserRouter,
+} from "react-router-dom";
 
+// local component import
+import { Checkout, Home } from "./pages";
 const shows = [
   {
     title: "qwer",
@@ -16,12 +24,18 @@ const shows = [
   },
 ];
 
+const checkoutData = {
+  price: "2000",
+};
+
 const App = () => {
   return (
-    <div className="px-4">
-      {/* <ShowsListScreen shows={shows} /> */}
-      <CheckOut />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="checkout" element={<Checkout />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
@@ -35,31 +49,6 @@ const ShowsListScreen = ({ title, details }) => {
           </li>
         ))}
       </ul>
-    </div>
-  );
-};
-
-const CheckOut = ({ showType, total }) => {
-  return (
-    <div className="grid grid-cols-3 gap-4 m-5">
-      <div className="grid col-span-2 gap-3">
-        <div className="ring-1 ring-slate-600 rounded-sm p-4">
-          <h3 className="capitalize">delivery</h3>
-          <h5 className="capitalize">mobile entry - {showType}</h5>
-          <p className="text-slate-500">
-            lorem ipsum dolor sit amet, consectetur adip non pro{" "}
-          </p>
-        </div>
-        <div className="ring-1 ring-slate-600 rounded-sm p-4">
-          <h3>Payment</h3>
-        </div>
-      </div>
-      <div className="ring-1 ring-slate-600 rounded-sm p-4">
-        <div class="text-bold flex">
-          <h3 className="capitalize">total</h3>
-          <h3>{total}</h3>
-        </div>
-      </div>
     </div>
   );
 };
