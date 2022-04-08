@@ -39,18 +39,18 @@ const App = () => {
   );
 };
 
-const ShowsListScreen = ({ title, details }) => {
-  return (
-    <div>
-      <ul>
-        {shows?.map((s, i) => (
-          <li key={i}>
-            {s.title} {s.details}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+// const ShowsListScreen = ({ title, details }) => {
+//   return (
+//     <div>
+//       <ul>
+//         {shows?.map((s, i) => (
+//           <li key={i}>
+//             {s.title} {s.details}
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
 
 export default App;

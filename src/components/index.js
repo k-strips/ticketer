@@ -1,7 +1,9 @@
 import { Delivery } from "./Delivery";
 import { Payment } from "./Payment";
 import { Total } from "./Total";
-import { Splitter } from "./Splitter";
+import { TextSection } from "./TextSection";
 import { Button } from "./Button";
+import { Input } from "./Input";
+import { EventThumbnail } from "./EventThumbnail";
 
-export { Delivery, Payment, Total, Splitter, Button };
+export { Delivery, Payment, Total, TextSection, Button, Input, EventThumbnail };
