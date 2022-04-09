@@ -4,9 +4,7 @@ ticket buy app for ITC justification
 
 ## Deployed site url
 
-[ticketer netlify url](<https://stellular-sawine-45fb44.netlify.app/>
-
-)
+open [https://stellular-sawine-45fb44.netlify.app](https://stellular-sawine-45fb44.netlify.app/) to visit deployed site
 
 # Getting Started with Create React App
 
