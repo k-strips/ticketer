@@ -2,6 +2,7 @@ export const showsData = [
   {
     id: "1",
     title: "rain deer",
+    image: "https://api.lorem.space/image/game",
     description: "asdfj esdf ",
     category: "comedy",
     price: "300",
@@ -11,6 +12,7 @@ export const showsData = [
   {
     id: "2",
     title: "qwerty",
+    image: "https://api.lorem.space/image/game",
     description: "anything goes",
     category: "sports",
     price: "500",
@@ -20,6 +22,7 @@ export const showsData = [
   {
     id: "3",
     title: "dance dance",
+    image: "https://api.lorem.space/image/game",
     description: "dance school",
     category: "music and dance",
     price: "40",
@@ -29,6 +32,7 @@ export const showsData = [
   {
     id: "4",
     title: "wine and love",
+    image: "https://api.lorem.space/image/game",
     description: "wine tasting",
     category: "social",
     price: "300",
@@ -38,6 +42,7 @@ export const showsData = [
   {
     id: "5",
     title: "eat all",
+    image: "https://api.lorem.space/image/book",
     description: "lorem ipsum sit dcolor",
     category: "social",
     price: "200",
@@ -47,6 +52,7 @@ export const showsData = [
   {
     id: "6",
     title: "node hackerton",
+    image: "https://api.lorem.space/image/movie",
     description: "lorem ipsum sit ",
     category: "technology",
     price: "50",
