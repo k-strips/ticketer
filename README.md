@@ -4,7 +4,7 @@ ticket buy app for ITC justification
 
 ## Deployed site
 
-### [ticketer site](<https://stellular-sawine-45fb44.netlify.app/>
+### [ticketer netlify url](<https://stellular-sawine-45fb44.netlify.app/>
 
 )
 
