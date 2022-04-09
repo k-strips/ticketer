@@ -6,22 +6,29 @@ export const EventThumbnail = ({ ticket }) => {
   const navigate = useNavigate();
   return (
     <div
-      className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer"
+      className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer m-2 mx-auto"
       onClick={() => navigate(`${ticket?.id}/buy`)}
     >
-      <img className="rounded-t-lg" src={ticket?.image} alt="" />
+      <img className="rounded-t-lg w-full" src={ticket?.image} alt="" />
 
       <div className="p-5">
         <hgroup className="flex justify-between capitalize mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-          <h5>{ticket?.title}</h5>
-          <h3>{currencyFormatter(ticket?.price)}</h3>
+          <h5 className="text-gray-500">{ticket?.title}</h5>
+          <h3 className="text-gray-500">{currencyFormatter(ticket?.price)}</h3>
         </hgroup>
 
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          venue: {ticket?.venue}
+          <span className="text-xs text-gray-400">Venue:</span>{" "}
+          <span className="capitalize"> {ticket?.venue}</span>
         </p>
-        <p>date: {ticket?.date.toDateString()}</p>
-        <p>description: {ticket?.description}</p>
+        <p>
+          <span className="text-xs text-gray-400">Date:</span>{" "}
+          <span className="capitalize"> {ticket?.date.toDateString()}</span>
+        </p>
+        <p>
+          <span className="text-xs text-gray-400">Description:</span>{" "}
+          <span className="capitalize"> {ticket?.description}</span>
+        </p>
       </div>
     </div>
   );

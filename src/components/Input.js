@@ -9,7 +9,7 @@ export const Input = ({ children, label, inputType = 0, ...props }) => {
     </label>
   ) : (
     <div className="py-1">
-      <label className="capitalize">{label}</label>
+      <label className="capitalize text-xs text-gray-400">{label}</label>
       <input {...props} />
     </div>
   );

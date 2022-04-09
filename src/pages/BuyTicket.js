@@ -50,57 +50,80 @@ export const BuyTicket = () => {
     console.log(userData);
   };
   return (
-    <div className="grid grid-cols-3 mx-4">
-      <div className="p-4 shadow-sm ring-1 ring-slate-100">
-        <h2 className="font-bold text-lg">Show Details</h2>
-        <img src={show?.image} alt="show thumnail" className="w-full" />
-        <div>
-          <p>venue: {show?.venue}</p>
-          <p>date: {show?.date?.toDateString()}</p>
+    <div className="grid grid-cols-3 mx-4 gap-1 mt-2">
+      <div className="p-4 col-span-3 lg:col-span-1">
+        <img
+          src={show?.image}
+          alt="show thumnail"
+          className="w-10/12 mx-auto"
+        />
+        <div className="bg-white w-10/12 mx-auto rounded-b-xl">
+          <div className="w-max p-4">
+            <p>
+              <span className="text-xs text-gray-400">Venue:</span>{" "}
+              <span className="capitalize">{show?.venue}</span>
+            </p>
+            <p>
+              <span className="text-xs text-gray-400">Date:</span>{" "}
+              {show?.date?.toDateString()}
+            </p>
+            <p>
+              <span className="text-xs text-gray-400">Unit price:</span>{" "}
+              {currencyFormatter(show?.price)}
+            </p>
+          </div>
         </div>
-
-        <p>unit price: {currencyFormatter(show?.price)}</p>
       </div>
-      <div className="col-span-2 p-4 m-auto">
-        <h1 className="capitalize font-bold text-2xl mb-2 ">
+      <div className="col-span-3 lg:col-span-2 bg-white boarder rounded-xl p-5 shadow-lg mx-auto">
+        <h1 className="capitalize font-bold text-2xl mb-2 mx-auto ">
           buy {show.title} ticket
         </h1>
-        <form onSubmit={handleSubmit}>
-          <h2>personal details</h2>
-          <div className="shadow-md rounded-md mb-2 p-4">
-            <label htmlFor="userFullName" className="capitalize">
+        <form onSubmit={handleSubmit} className="mx-auto">
+          <h2 className="uppercase text-gray-600 text-xs">personal details</h2>
+          <div className="mb-2 py-4 mx-auto">
+            <label
+              htmlFor="userFullName"
+              className="capitalize text-xs text-gray-400"
+            >
               full name
             </label>
             <Input
               type="text"
-              className="w-full rounded-sm"
+              className="w-full border rounded border-gray-400"
               name="userFullName"
               onChange={handleChange}
-              placeholder="firstName lastName otherName"
+              placeholder="Firstname Surname Othernames"
               value={userData.userFullName}
             />
           </div>
-          <h2>ticket information</h2>
-          <div className="shadow-md rounded-md mb-2 p-4">
-            <label htmlFor="ticketQuantity" className="capitalize">
+          <h2 className="uppercase text-gray-600 text-xs">
+            ticket information
+          </h2>
+          <div className="mb-2 py-4">
+            <label
+              htmlFor="ticketQuantity"
+              className="capitalize text-xs text-gray-400"
+            >
               ticket quantity
             </label>
             <Input
               type="number"
-              className="w-full "
+              className="w-full border rounded border-gray-400"
               name="ticketQuantity"
               placeholder="2"
               onChange={handleChange}
               value={userData.ticketQuantity}
             />
           </div>
-          <h2>billing information</h2>
-          <div className="shadow-md rounded-md mb-2 p-4">
+          <h2 className="uppercase text-gray-600 text-xs">
+            billing information
+          </h2>
+          <div className=" mb-2 py-4">
             <Input
               type="Number"
               label="credit card number"
               inputType={1}
-              className="w-full rounded-sm"
+              className="w-full border rounded border-gray-400"
               name="cardNumber"
               onChange={handleChange}
               value={userData.cardNumber}
@@ -110,7 +133,7 @@ export const BuyTicket = () => {
                 type="number"
                 label="ccv"
                 inputType={1}
-                className="w-full rounded-sm"
+                className="w-full border rounded border-gray-400"
                 name="ccv"
                 onChange={handleChange}
                 value={userData.ccv}
@@ -119,14 +142,14 @@ export const BuyTicket = () => {
                 label="expiry date"
                 type="month"
                 inputType={1}
-                className="w-full rounded-sm"
+                className="w-full border rounded border-gray-400"
                 name="cardExpiry"
                 onChange={handleChange}
                 value={userData.cardExpiry}
               />
             </div>
           </div>
-          <Button className="bg-green-600 hover:bg-green-700 py-2 px-3">
+          <Button className="bg-green-600 hover:bg-green-700 py-2 px-3 uppercase text-gray-50 mx-auto">
             checkout
           </Button>
         </form>

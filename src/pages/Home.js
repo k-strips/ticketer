@@ -20,7 +20,7 @@ export const Home = () => {
           <h2>Comedy</h2>
           <h5>view all</h5>
         </hgroup>
-        <div className="grid grid-cols-4 gap-1 min-h-[40%] mx-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-h-[20px] mx-5">
           {shows && shows?.map((t, i) => <EventThumbnail ticket={t} key={i} />)}
         </div>
       </div>
