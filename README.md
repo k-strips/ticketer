@@ -2,6 +2,12 @@
 
 ticket buy app for ITC justification
 
+## Deployed site
+
+### [ticketer site](<https://stellular-sawine-45fb44.netlify.app/>
+
+)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
