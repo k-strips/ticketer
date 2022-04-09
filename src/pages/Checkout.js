@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import "../App.css";
 
 // local components import
 import { Total, Payment, Delivery } from "../components";
