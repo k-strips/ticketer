@@ -2,11 +2,11 @@
 
 ticket buy app for ITC justification by Stephen Ntiri Osei-Bonsu
 
-## Deployed site url
+## steps to run code locally
 
-open [https://adorable-pegasus-a4781f.netlify.app](<https://adorable-pegasus-a4781f.netlify.app>
-
-/) to visit deployed site
+- clone repo
+- install dependencies: `npm install`
+- cd into directory and run `npm start` to start the project locally
 
 # Getting Started with Create React App
 
