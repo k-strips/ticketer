@@ -1,6 +1,6 @@
 # Ticketer
 
-ticket buy app for ITC justification
+ticket buy app for ITC justification by Stephen Ntiri Osei-Bonsu
 
 ## Deployed site url
 
