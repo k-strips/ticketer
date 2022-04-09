@@ -54,7 +54,11 @@ export const Total = () => {
             {currencyFormatter(chart?.show?.price)} * {chart?.ticketQuantity}
           </span>
         </h5>
-        <h5>$234.19</h5>
+        <h5>
+          {currencyFormatter(
+            costCalculator(chart?.show?.price, chart?.ticketQuantity)
+          )}
+        </h5>
       </TextSection>
       <TextSection header="delivery">
         <h5 className="capitalize text-sm">mobile entry:</h5>
